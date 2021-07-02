@@ -1,14 +1,7 @@
-var mForm = document.querySelector('form');
-mForm.addEventListener('submit', submitFunc);
-async function submitFunc(e) {
-e.preventDefault();
-var post = await fetch(this.domain.value, {
-    "method": "post",
-    "body": new FormData(this)
-  });
-document.body.append(post.ok);
-var result = await post.json();
-document.body.append(result.url);
-this.reset();
-return false;
-}
+var express = require('express');
+var app = express();
+app.use(express.static(__dirname+'/public'));
+app.use((req, res) => {
+res.status(404).end();
+});
+app.listen(3000);
