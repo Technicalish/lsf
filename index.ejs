@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>YOSL.GA | Your own short link generator autobot</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="YOSL.GA stands for Your Own Shortened URL Generator Assistant">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.png">
+    <link rel="dns-prefetch" href="https://yosl.cf">
+  </head>
+  <body>
+	  <header><a id="header" href="/">YOSL.GA</a></header>
+    <main>
+      <form action="https://yosl.cf" method="post" enctype="multipart/form-data" autocomplete="off" spellcheck="false">
+        <input type="url" name="url" placeholder="Enter a url" required>
+        <select name="domain" required>
+          <option value="https://yosl.cf" selected>YOSL.CF</option>
+        </select>
+        <input name="pathname" placeholder="Enter a pathname" maxlength="20" pattern="[a-zA-Z0-9]+" title="Only alphanumeric response accepted." value="<%= pathname %>">
+        <button type="submit">CREATE</button>
+      </form>
+    </main>
+    <section></section>
+    <script src="script.js" async defer></script>
+  </body>
+</html>
